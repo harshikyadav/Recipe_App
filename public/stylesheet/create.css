@@ -1,0 +1,137 @@
+/* Base styling */
+body {
+    font-family: "Lexend", sans-serif;
+    margin: 0;
+    padding: 10px;
+    color: #ecf0f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Background overlay */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('https://images.pexels.com/photos/326281/pexels-photo-326281.jpeg?cs=srgb&dl=pexels-pixabay-326281.jpg&fm=jpg') no-repeat center center fixed;
+    background-size: cover;
+    opacity: 0.7;
+    z-index: -1;
+}
+
+/* Card styling */
+.card {
+    width: 60vw;
+    background-color: rgba(8, 8, 8, 0.521);
+    backdrop-filter: blur(12px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    animation: slideUp 0.6s ease-out;
+    transition: transform 0.3s ease;
+    padding-right:30px;
+}
+
+.card:hover {
+    transform: scale(1.01);
+}
+
+/* Animation for card entry */
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Form content styling */
+.form-content {
+    padding: 30px;
+}
+
+/* Headings */
+.form-content h3 {
+    margin-top: 20px;
+    color: #e49310;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+/* Input and Textarea styles */
+input[type="text"],
+textarea {
+    width: 100%;
+    font-size: 1rem;
+    padding: 12px 15px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Scroll and transition for textarea */
+textarea {
+    height: 20vh;
+    overflow-y: auto;
+    resize: none;
+}
+
+/* On focus effect */
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #000000;
+    background-color: rgba(10, 10, 10, 0.495);
+    box-shadow: 0 0 8px #000000aa;
+}
+
+/* Placeholder styling (optional) */
+input::placeholder,
+textarea::placeholder {
+    color: #ccc;
+    font-style: italic;
+}
+.submit-btn {
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+    background-color: #e67e22;
+    transform: scale(1.05);
+}
+.back{
+    display:flex;
+    justify-content: flex-start;
+    align-self: start;
+}
+.back a {
+    text-decoration: none;
+    color: black;
+    font-size: 34px;
+    font-weight: 900;
+    transition: font-size 0.3s ease; /* Add transition for smooth hover effect */
+}

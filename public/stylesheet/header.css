@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+body {
+    /* font-family: "Lilita One", sans-serif; */
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    background: url('https://images.pexels.com/photos/326281/pexels-photo-326281.jpeg?cs=srgb&dl=pexels-pixabay-326281.jpg&fm=jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #ecf0f1;
+}
+
+header {
+    background: linear-gradient(to bottom, black, transparent);
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: large;
+    font-weight: 100;
+    letter-spacing: 3px;
+    color: beige;
+    text-shadow: 2px 2px 1.5px black;
+}
+
+.nav-center {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 1.5px black;
+}
+
+.nav-center a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-center a:hover {
+    color: #fd0000;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-shadow: 2px 2px 1.5px black;
+}
+
+.dropdown {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dropdown label {
+    color: #ecf0f1;
+    font-size: 16px;
+}
+
+#category {
+    background-color: #4f0500;
+    color: #ecf0f1;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#category:hover {
+    background-color: #984c3b;
+}
+
+#category option {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+}
+
+.dropdown:hover #category {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+main {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 20vh;
+    padding: 10px;
+    color: beige;
+}
+
+.intro {
+    max-width: 900px;
+    text-align: right;
+    overflow: hidden; /* Ensures the text stays within the view range */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.catching_heading{
+    width:75%;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 1.5px black;
+}
+.subheading{
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 1.5px black;
+}
+.catching_heading, .subheading {
+    overflow: hidden; /* Ensures the text is hidden initially */
+    border-right: .15em solid orange; /* Creates the caret effect on the left */
+    white-space: nowrap; 
+    /* Keeps the text on one line */
+    margin: 0;
+    max-width: 100%; /* Ensures the text stays within the view range */
+    animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
+    text-align: right; /* Aligns the text to the right */
+}
+
+.subheading {
+    animation: typing 4s steps(30, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0%; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: orange; }
+}
+
+
+  .container {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    /* background-color: #f0f0f0; */
+    overflow: hidden;
+  }
+  
+  /* Styling for the ball */
+
+  .tomato {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;  /* Adjust tomato size */
+    height: 60px; /* Adjust tomato size */
+    background-image: url('https://png.pngtree.com/png-clipart/20230113/ourmid/pngtree-red-fresh-tomato-with-green-leaf-png-image_6561484.png'); /* Replace with your tomato image URL */
+    background-size: cover; /* Ensure the image fits the div */
+    background-position: center;
+    border-radius: 50%; /* Optional: can add a border radius to make it round */
+    /* box-shadow: 0 0 20px 5px rgba(255, 99, 71, 0.8);  */
+    animation: tomatoAnimation 3s ease-out forwards;
+  }
+  /* Card Styling (Initially Hidden) */
+  
+  .card {
+    position: absolute;
+    top: 50%;
+    right: -300px; /* Initially off-screen to the right */
+    transform: translateY(-50%);
+    /* background-color: rgba(255, 255, 255, 0.29);  */
+    width: 50%; /* Card width is 50% of the screen */
+    height: 300px; /* Set a specific height */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: showCard 1s ease-in-out 3s forwards; /* Display after the ball animation ends */
+    border-radius: 20px; /* This will round the corners */
+    display:flex;
+    justify-content:start;
+  }
+  
+  /* Animation for the ball's movement */
+  @keyframes tomatoAnimation {
+    0% {
+      left: 0;
+      bottom: 0;
+    }
+    50% {
+      left: 50%;
+      bottom: 150px;
+    }
+    60% {
+      bottom: 0;
+    }
+    70% {
+      bottom: 50px;
+    }
+    80% {
+      bottom: 0;
+    }
+    100% {
+      left: 100%;
+      bottom: 0;
+    }
+  }
+  
+  /* Animation to slide the card into view */
+  @keyframes showCard {
+    0% {
+      opacity: 0;
+      right: -300px; /* Card starts off-screen */
+    }
+    100% {
+      opacity: 1;
+      right: 20px; /* Card slides into view on the right */
+    }
+  }
+
+.content{
+    height:100%;
+    width:50%;
+}
+.insidecardi{
+  box-sizing: border-box;
+  height:90%;
+  width:30%;
+  background-color: rgb(193, 189, 189);
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  margin-left:20px;
+  box-shadow: 3px 3px 10px rgb(0, 0, 0);
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+.img{
+  height:70%;
+  width:100%;
+  background-size: cover;
+  border-radius: 10px;
+}
+.data{
+  color:rgb(255, 255, 255);
+  background-color: black;
+  font-family: monospace;
+  font-size:medium;
+  padding:2px;
+  border-radius: 10px;
+}
+.insidecardi:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 15px rgba(4, 5, 6, 0.6); /* bluish glow */
+}
+.arrow_bg{
+  background-color: #ecf0f1;
+  border-radius: 50%;
+}
+.arrow{
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+.btn{
+  background-color: #ffffff00;
+  border: 0;
+}
+
+/* .data {
+color: white;
+font-family: monospace;
+padding: 10px;
+} */

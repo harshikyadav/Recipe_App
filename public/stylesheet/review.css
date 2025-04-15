@@ -1,0 +1,191 @@
+
+body {
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 10px;
+    color: #ecf0f1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    position: relative;
+    overflow: auto; /* Ensure body content is scrollable */
+}
+
+body::before {
+    content: "";
+    position: fixed; /* Keep the overlay fixed */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://images.pexels.com/photos/326281/pexels-photo-326281.jpeg?cs=srgb&dl=pexels-pixabay-326281.jpg&fm=jpg') no-repeat center center fixed;
+    background-size: cover;
+    opacity: 0.7; /* Adjust opacity here */
+    z-index: -1; /* Make sure the overlay is behind content */
+}
+
+.card{
+    width:60vw;
+    /* height:100vh; */
+    height:max-content;
+    background-color: rgb(54, 54, 54);
+    border-radius: 10px;
+    border:2px solid black;
+    box-shadow: 2px 2px 2px black;
+    align-self: center;
+}
+.image_div{
+    /* width: 100%;
+    height:50vh;
+    background-size:cover;
+    background-position:top;
+    border-radius:10px 10px 0 0 ; */
+    width: 100%;
+    height: 50vh; /* This means 50% of the viewport height */
+    background-size: cover; /* Keeps the image covering the box */
+    background-position: center; /* Centered for better framing */
+    border-radius: 10px 10px 0 0;
+    background-repeat: no-repeat;
+    
+}
+
+.form-content {
+    padding: 20px;
+}
+
+.form-content h2 {
+    margin-top: 0;
+    font-size: 2rem;
+    color: #f1c40f;
+}
+
+.form-content h3 {
+    margin-top: 20px;
+    color: #e67e22;
+}
+
+.form-content p {
+    line-height: 1.6;
+    margin: 10px 0;
+    white-space: pre-wrap; /* Helps with formatting steps if they're multi-line */
+}
+.back{
+    display:flex;
+    justify-content: flex-start;
+}
+.back a {
+    text-decoration: none;
+    color: black;
+    font-size: 34px;
+    font-weight: 900;
+    transition: font-size 0.3s ease; /* Add transition for smooth hover effect */
+}
+
+.back a:hover {
+    font-size: 40px;
+}
+.edit_a{
+    text-decoration: none;
+}
+
+/* buttons */
+/* Container for buttons */
+.button-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Base styles for buttons */
+button {
+    font-family: 'Arial', sans-serif;
+    padding: 8px 15px;
+    border: none;
+    font-size: 10px;
+    cursor: pointer;
+    border-radius: 50px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+}
+
+/* Delete button styles */
+.delete-btn {
+    background-color: #e74c3c; /* Red color */
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.delete-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.4s;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.delete-btn:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.delete-btn:active {
+    transform: translateY(2px); /* Pressed effect */
+}
+
+/* Edit button styles */
+.edit-btn {
+    background-color: #3498db; /* Blue color */
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.edit-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.4s;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.edit-btn:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.edit-btn:hover {
+    background-color: #2980b9;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.edit-btn:active {
+    transform: translateY(2px); /* Pressed effect */
+}
+
+/* Edit link style to remove default styling */
+.edit-link {
+    text-decoration: none;
+}
+
+

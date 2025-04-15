@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheRecipeNest</title>
+    <link rel="stylesheet" href="stylesheet/header.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-left">
+                <h2>TheRecipeNest</h2>
+            </div>
+            <div class="nav-center">
+                <a href="/home">Home</a>
+                <a href="/recipes">Recipes</a>
+                <a href="/contacts">Contacts</a>
+            </div>
+     
+        </nav>
+    </header>
+    <main>
+        <div class="intro">
+            <h1 class="catching_heading">Discover Delicious Recipes </h1>
+            <h1 class="catching_heading"> Around the world....</h1>
+            <br>
+            <h2 class="subheading">Explore, cook, and enjoy handpicked recipes for every state.</h2>
+        </div>
+    </main>
+  
+    <div class="container">
+       
+      <div class="tomato"></div>
+      <div class="card">
+        
+          <%for(let i=0;i<data.length;++i){%>
+            <div class="insidecardi" style="display:<%= i <3 ? 'block' : 'none' %>; ">
+              <div class="img" style="background-image: url('<%=data[i].image_url%>'); "></div>
+              <div class="data"><%=data[i].content%></div>
+            </div>
+          <%}%>
+        
+      
+       <div class="arrow"><button class="btn"><img class="arrow_bg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAABMklEQVR4nO2Wu05CQRCGv5egUC6xtIBKOn0BEyW8htx8FkuiNpb2qG/CMfQa6Lh0QDAnGZMTEndndj3kFPzJNCe758s/OzuzcFQBVQP6wAeQACuJRL71gOp/AsvAENgAO09sgVfgLBbaBpYK4H4sgFYo9F4cWKFZ94MQp9sIaBaudl7xpPcSaAJTQ9pPNeBnz48uZF3dAH/UXBlf9U4FaoFvJJN/aqB0MAMasucc+FLs6brA74bCsTofucATY9VanCcu8CLgymSdNz3VXTzwZ2Sqvx1rx4Usrl4OTn/jzgWu5tRA1r4Gkuoph5Y5RDn4XdV9ZRwSc+AEpa6VLw7NWLzVQrN9O/YhkL7RgtQKbCppem+IVAl4kMrUuHyxnKlGFRltb9KFlhJjaQ4dzZU5ikPrB9i0m1Sx111LAAAAAElFTkSuQmCC" alt="circled-chevron-right"></button></div>
+         
+      </div>
+  </div>
+      <script>
+        let currentIndex=0;
+        let btn=document.querySelector('.btn');
+        let insidecardi=document.querySelectorAll('.insidecardi');
+        btn.addEventListener('click',()=>{
+          insidecardi[currentIndex].style.display = 'none';
+          currentIndex=(currentIndex+1)%insidecardi.length;
+          let temp=currentIndex;
+          insidecardi[currentIndex].style.display = 'block';
+          currentIndex=(currentIndex+1)%insidecardi.length;
+          insidecardi[currentIndex].style.display = 'block';
+          currentIndex=(currentIndex+1)%insidecardi.length;
+          insidecardi[currentIndex].style.display = 'block';
+          currentIndex=temp;
+          console.log(currentIndex);
+        })
+  
+      </script>
+      
+</body>
+</html>

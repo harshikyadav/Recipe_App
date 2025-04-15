@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create</title>
+    <link rel="stylesheet" href="/stylesheet/create.css">
+</head>
+<body>
+    <div class="back"><a href="/recipes">&#x21a9;</a></div>
+    <div class="card" >
+        <form action="/edit/<%=obj.id%>" method="post">
+            <div class="form-content">
+                <h3><label for="title">Title</label></h3>
+                <input type="text" name="title" id="title" value="<%=obj.title%>" required>
+        
+                <h3><label for="about">About</label></h3>
+                <textarea name="about" id="about" required><%=obj.about%></textarea>
+        
+                <h3><label for="ingredients">Ingredients</label></h3>
+                <textarea name="Ingredients" id="ingredients" required><%=obj.Ingredients%></textarea>
+        
+                <h3><label for="steps">Steps</label></h3>
+                <textarea name="steps" id="steps" required><%=obj.steps%></textarea>
+        
+                <h3><label for="image_url">Image URL</label></h3>
+                <input type="text" name="image_url" id="image_url" value="<%=obj.image_url%>" required>
+
+                <h3><label for="type">Type</label></h3>
+                <input type="text" name="type" id="type" value="<%=obj.type%>" required >
+                 
+                <h3><label for="id">Id</label></h3>
+                <input type="text" name="id" id="id" value="<%=obj.id%>" readonly >
+
+                <button type="submit" class="submit-btn">Done</button>
+            </div>
+            
+
+        </form>
+        
+    </div>
+</body>
+</html>

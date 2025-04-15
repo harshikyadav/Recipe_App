@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=obj.title%></title>
+    <link rel="stylesheet" href="/stylesheet/review.css">
+</head>
+<body>
+    <div class="back"><a href="/recipes">&#x21a9;</a></div>
+    <div class="card" >
+        <div class="image_div" style="background-image: url(<%=obj.image_url%>);"></div>
+        <form action="/delete/<%=obj.id%>?_method=DELETE" method="post">
+            <div class="form-content">
+                <h2><%= obj.title %></h2>
+                <p class="about"><%= obj.about %></p>
+        
+                <h3>Ingredients</h3>
+                <p class="ingredients"><%= obj.Ingredients %></p>
+        
+                <h3>Steps</h3>
+                <p class="steps"><%= obj.steps %></p>
+
+                <!-- <div><button type="submit">Delete</button> <a href="/edit/<%=obj.id%>" class="edit_a"><button type="button">Edit</button></a></div> -->
+                <div>
+                    
+                    <button type="submit" class="delete-btn">Delete</button>
+                    
+                    <a href="/edit/<%=obj.id%>" class="edit-link">
+                        <button type="button" class="edit-btn">Edit</button>
+                    </a>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <script>
+        
+    </script>
+</body>
+</html>
