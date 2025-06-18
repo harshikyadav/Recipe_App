@@ -11,7 +11,7 @@ const recipe=[
     },
     {
         "title": "Paneer Butter Masala",
-        "image_url": "https://khaddoroshik.com/wp-content/uploads/2024/06/paneer-do-pyaza-cooking.jpg",
+        "image_url": "https://vegecravings.com/wp-content/uploads/2017/04/paneer-butter-masala-recipe-step-by-step-instructions.jpg",
         "about": "Paneer Butter Masala is a rich and creamy vegetarian curry made with paneer (cottage cheese) in a spiced tomato gravy. It’s a popular choice for vegetarians and is usually served with naan, roti, or rice.",
         "Ingredients": "Paneer (250 grams), tomatoes (3 medium-sized), onion (1 large, chopped), ginger-garlic paste (1 tbsp), butter (3 tbsp), heavy cream (1/4 cup), garam masala (1 tsp), red chili powder (1 tsp), turmeric powder (1/2 tsp), kasuri methi (1 tsp), salt, and fresh coriander for garnish.",
         "steps": "1. Heat butter in a pan and sauté onions until golden brown. 2. Add ginger-garlic paste and cook for a minute. 3. Add tomatoes, red chili powder, turmeric, and salt. Cook until tomatoes are soft. 4. Blend the mixture to a smooth paste. 5. Return the paste to the pan, add paneer cubes, and cook for 5 minutes. 6. Add cream, kasuri methi, and garam masala. Simmer for a few minutes. 7. Garnish with fresh coriander and serve with naan or rice.",
